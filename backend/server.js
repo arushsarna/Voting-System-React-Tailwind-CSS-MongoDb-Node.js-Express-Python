@@ -8,10 +8,12 @@ mongoose.connect(DB
 }).catch((err) => {
     console.log(err);
 });
-const User = require('./models/userSchema');
+
+
+app.use(express.json());
+app.use(require('./router/auth'));
 const port = process.env.PORT || 9000
 
-app.use(require('./router/auth'))
 
 app.get('/', (req, res) => {
     res.send('Hello World!')
