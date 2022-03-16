@@ -35,6 +35,8 @@ const Register = () => {
                 <input className="m-3 " type="date" />
                 <div className="m-3 ">Address</div>
                 <input className=" border ml-5 mb-4 p-2 " type=" text" size="78 " /><br />
+                <div className="m-3 ">Password</div>
+                <input className=" border ml-5 mb-4 p-2 " type="password" size="78 " /><br />
                 <Link to="/verify" className=" text-white ml-5 mb-10 rounded-sm p-1 border bg-blue-700 text-xl"  >Register</Link >
 
             </form >
