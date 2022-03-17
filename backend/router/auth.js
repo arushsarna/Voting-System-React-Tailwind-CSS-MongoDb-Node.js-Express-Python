@@ -15,8 +15,11 @@ router.get('/about', (req, res) => {
 router.get('/hey', (req, res) => {
     res.send('Hello World!')
 });
+
+
 router.post('/register', (req, res) => {
     const { name, id, surname, middlename, address, password, gender } = req.body;
+
     if (!name || !id || !surname || !middlename || !address || !password || !gender) {
         return res.status(422).json({ error: "Fill all the details " });
 
@@ -30,13 +33,13 @@ router.post('/register', (req, res) => {
 
         user.save().then(() => {
             res.status(201).json({ message: "Registration Sucessfull" });
-        }).catch((err) => {
-            res.status(500).json({ err })
-        });
+
+        })
+            .catch((err) => {
+                res.status(500).json({ err })
+            });
     }).catch(err => { console.log(err); });
-    console.log(name);
-    console.log(id);
-    // res.send("my reg");
+
 
 })
 
